@@ -12,24 +12,42 @@ class MainViewController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        tabBar.tintColor = UIColor.orangeColor()
+        
+        /*let home = HomeTableViewController()
+        home.tabBarItem.image = UIImage(named: "tabbar_home")
+        home.tabBarItem.selectedImage = UIImage(named: "tabbar_home_highlighted")
+        home.title = "首页"
+        
+        let nav = UINavigationController()
+        nav.addChildViewController(home)
+        
+        addChildViewController(nav)*/
+        
+        addChildViewController(HomeTableViewController(), title: "首页", imageName: "tabbar_home")
+        addChildViewController(MessageTableViewController(), title: "消息", imageName: "tabbar_message_center")
+        addChildViewController(DiscoverTableViewController(), title: "广场", imageName: "tabbar_discover")
+        addChildViewController(ProfileTableViewController(), title: "我", imageName: "tabbar_profile")
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    /**
+     初始化子控制器
+     
+     - parameter childController: 需要初始化的子控制器
+     - parameter title:           子控制器的标题
+     - parameter imageName:       子控制器的图片
+     */
+    private func addChildViewController(childController: UIViewController,  title: String, imageName: String) {
+        
+        childController.tabBarItem.image = UIImage(named: imageName)
+        childController.tabBarItem.selectedImage = UIImage(named: imageName + "_highlighted")
+        childController.title = title
+        
+        let nav = UINavigationController()
+        nav.addChildViewController(childController)
+        
+        addChildViewController(nav)
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
