@@ -15,20 +15,28 @@ class MainViewController: UITabBarController {
         
         tabBar.tintColor = UIColor.orangeColor()
         
-        /*let home = HomeTableViewController()
-        home.tabBarItem.image = UIImage(named: "tabbar_home")
-        home.tabBarItem.selectedImage = UIImage(named: "tabbar_home_highlighted")
-        home.title = "首页"
-        
-        let nav = UINavigationController()
-        nav.addChildViewController(home)
-        
-        addChildViewController(nav)*/
-        
-        addChildViewController("HomeTableViewController", title: "首页", imageName: "tabbar_home")
-        addChildViewController("MessageTableViewController", title: "消息", imageName: "tabbar_message_center")
-        addChildViewController("DiscoverTableViewController", title: "广场", imageName: "tabbar_discover")
-        addChildViewController("ProfileTableViewController", title: "我", imageName: "tabbar_profile")
+        //获取json文件路径（可以通过服务器更改控制器数据）
+        let path = NSBundle.mainBundle().pathForResource("MainVCSettings.json", ofType: nil)
+        //通过文件路径创建NSData
+        if let jsonPath = path {
+            let jsonData = NSData(contentsOfFile: jsonPath)
+            
+            do {
+                //序列化json数据 --> Array
+                let dictArr = try NSJSONSerialization.JSONObjectWithData(jsonData!, options: NSJSONReadingOptions.MutableContainers)
+                //遍历数组，动态创建控制器和设置数据
+                for dict in dictArr as! [[String: String]]{
+                    addChildViewController(dict["vcName"]!, title: dict["title"]!, imageName: dict["imageName"]!)
+                }
+                
+            }catch{
+                //如果json文件动态加载控制器出错，则默认为本地创建
+                addChildViewController("HomeTableViewController", title: "首页", imageName: "tabbar_home")
+                addChildViewController("MessageTableViewController", title: "消息", imageName: "tabbar_message_center")
+                addChildViewController("DiscoverTableViewController", title: "广场", imageName: "tabbar_discover")
+                addChildViewController("ProfileTableViewController", title: "我", imageName: "tabbar_profile")
+            }
+        }
         
     }
     /**
