@@ -45,6 +45,19 @@ class VisitorView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        //初始化UI
+        setupUI()
+    }
+    
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+ /// 初始化UI
+    func setupUI() {
+        
         //1.添加子控件
         addSubview(iconView)
         addSubview(homeIcon)
@@ -71,11 +84,6 @@ class VisitorView: UIView {
         
         //2.5设置背景蒙板
         maskBGView.xmg_Fill(self, insets: UIEdgeInsets(top: 0, left: 0, bottom: 30, right: 0))
-        
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
     }
     
     //MARK: - 懒加载控件
@@ -142,7 +150,7 @@ class VisitorView: UIView {
     }()
     
     //MARK: - 内部控制方法
-    func startAnimation() {
+    private func startAnimation() {
         //1.创建动画
         let anim = CABasicAnimation(keyPath: "transform.rotation")
         //2.设置动画属性

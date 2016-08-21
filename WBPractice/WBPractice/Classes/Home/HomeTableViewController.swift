@@ -16,7 +16,30 @@ class HomeTableViewController: BaseTableViewController {
         //1.如果没有登陆，就设置未登陆界面的信息
         if !userLogin {
             visitorView?.setupVisitorInfo(true, imageName: "visitordiscover_feed_image_house", message: "关注一些人，回这里看看有什么惊喜")
+            return
         }
+        
+        //2.初始化导航条
+        setupNav()
+    }
+    
+    /**
+     初始化导航条
+     */
+    private func setupNav() {
+        //command + control + e : 选择相同的变量进行改动
+        //左边按钮
+        navigationItem.leftBarButtonItem = UIBarButtonItem.createBarButtonItem("navigationbar_friendattention", target: self, action: "leftBtnClick")
+        //右边按钮
+        navigationItem.rightBarButtonItem = UIBarButtonItem.createBarButtonItem("navigationbar_pop", target: self, action: "rightBtnClick")
+    }
+    
+    func leftBtnClick() {
+        print(__FUNCTION__)
+    }
+    
+    func rightBtnClick() {
+        print(__FUNCTION__)
     }
 
     override func didReceiveMemoryWarning() {

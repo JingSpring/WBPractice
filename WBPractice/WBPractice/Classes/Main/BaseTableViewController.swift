@@ -11,7 +11,7 @@ import UIKit
 class BaseTableViewController: UITableViewController,VisitorViewDelegate {
     
     //定义一个变量判断用户当前是否登陆
-    var userLogin = false
+    var userLogin = true
     //保存未登陆界面
     var visitorView: VisitorView?
     
