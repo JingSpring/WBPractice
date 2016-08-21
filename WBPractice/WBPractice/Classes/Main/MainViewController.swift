@@ -13,7 +13,7 @@ class MainViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tabBar.tintColor = UIColor.orangeColor()
+        //tabBar.tintColor = UIColor.orangeColor()
         
         //添加所有子控制器
         addChildViewControllers()
