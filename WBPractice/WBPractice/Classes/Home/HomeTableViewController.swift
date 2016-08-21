@@ -32,6 +32,17 @@ class HomeTableViewController: BaseTableViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem.createBarButtonItem("navigationbar_friendattention", target: self, action: "leftBtnClick")
         //右边按钮
         navigationItem.rightBarButtonItem = UIBarButtonItem.createBarButtonItem("navigationbar_pop", target: self, action: "rightBtnClick")
+        
+        //初始化标题按钮
+        let titleButton = TitleButton()
+        titleButton.setTitle("极客江南", forState: UIControlState.Normal)
+        titleButton.addTarget(self, action: "titleBtnClick:", forControlEvents: UIControlEvents.TouchUpInside)
+        navigationItem.titleView = titleButton
+    }
+    
+    func titleBtnClick(btn: TitleButton) {
+        
+        btn.selected = !btn.selected
     }
     
     func leftBtnClick() {

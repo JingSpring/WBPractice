@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3E0FF0B71D69F6ED00A66072 /* UIBarButtonItem+Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0FF0B61D69F6ED00A66072 /* UIBarButtonItem+Category.swift */; };
+		3E0FF0B91D6A013400A66072 /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E0FF0B81D6A013400A66072 /* TitleButton.swift */; };
 		3E7677B71D66ED410017001D /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7677B61D66ED410017001D /* BaseTableViewController.swift */; };
 		3E7677B91D66EF4D0017001D /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7677B81D66EF4D0017001D /* VisitorView.swift */; };
 		3E7677BB1D66FA220017001D /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E7677BA1D66FA220017001D /* UIView+AutoLayout.swift */; };
@@ -43,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		3E0FF0B61D69F6ED00A66072 /* UIBarButtonItem+Category.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Category.swift"; sourceTree = "<group>"; };
+		3E0FF0B81D6A013400A66072 /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		3E7677B61D66ED410017001D /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		3E7677B81D66EF4D0017001D /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		3E7677BA1D66FA220017001D /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				3E0FF0B61D69F6ED00A66072 /* UIBarButtonItem+Category.swift */,
+				3E0FF0B81D6A013400A66072 /* TitleButton.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				3E7BD65C1D631EFE00BFD1EB /* MessageTableViewController.swift in Sources */,
 				3E7677B91D66EF4D0017001D /* VisitorView.swift in Sources */,
 				3E7BD6201D63159100BFD1EB /* AppDelegate.swift in Sources */,
+				3E0FF0B91D6A013400A66072 /* TitleButton.swift in Sources */,
 				3E916BE71D636EEE001165AC /* NullViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
